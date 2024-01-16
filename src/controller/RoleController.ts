@@ -35,7 +35,6 @@ class Rolecontroller {
   static CreateRole() {
     return async (req: Request, res: Response): Promise<Response> => {
       try {
-        console.log(req.body);
         const { roleName, active } = req.body;
         const createRole = await Role.create({
           roleName,

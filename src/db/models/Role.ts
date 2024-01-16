@@ -1,3 +1,5 @@
+"use strict";
+
 import { DataTypes, Model, Optional } from "sequelize";
 import conn from "../../config/dbConnect";
 

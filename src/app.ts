@@ -1,15 +1,17 @@
 import express, { Response, Request } from "express";
 import router from "./routes/Routes";
 import dotenv from "dotenv";
+// import swaggerJSDoc from "swagger-jsdoc";
+// import swaggerUi from "swagger-ui-express";
+// import swaggerSpec from "../api-docs/api_docs";
 
 dotenv.config();
 
 const app = express();
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
-app.get("/", (req: Request, res: Response) => {
-  res.send("Express with Typescript");
-});
+// app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.use("/api", router);
 
